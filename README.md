@@ -59,11 +59,7 @@ students-table-manager/
 ### 1. Database Setup
 
 Provision a free PostgreSQL database:
-- **[Neon](https://neon.tech)** (recommended, serverless, free tier)
-- **[Railway](https://railway.app)** (free trial)
-- **[Supabase](https://supabase.com)** (generous free tier)
 
-Copy your connection string — you'll need it in the next step.
 
 ### 2. Backend Setup
 
@@ -88,7 +84,7 @@ npx ts-node --compiler-options '{"module":"CommonJS"}' prisma/seed.ts
 
 # Start the API server
 npm run dev
-# Runs at http://localhost:3000
+# Runs at http://your_url/
 ```
 
 ### 3. Frontend Setup
@@ -101,18 +97,18 @@ npm install
 
 # Configure environment
 cp .env.example .env
-# .env already contains: VITE_API_URL=http://localhost:3000/api
+# .env already contains: VITE_API_URL=http://your _url/api
 
 # Start the dev server
 npm run dev
-# Runs at http://localhost:5173
+# Runs at  --url--
 ```
 
 ---
 
 ## API Reference
 
-Base URL: `http://localhost:3000/api`
+Base URL: `Your_URL'
 
 ### Endpoints
 
@@ -191,34 +187,6 @@ No body required. **Response**: `200 OK` with `{ "message": "..." }`.
 
 ---
 
-## Deployment
-
-### Frontend → Vercel / Netlify
-
-```bash
-cd frontend
-npm run build
-```
-
-**Vercel**: Import repo → set `VITE_API_URL` to your deployed backend URL → Deploy.  
-**Netlify**: Build command `npm run build`, publish dir `dist`. Add env var `VITE_API_URL`.
-
-### Backend → Vercel (Serverless)
-
-```bash
-cd backend
-# Ensure DATABASE_URL is set in Vercel project env vars
-vercel deploy
-```
-
-Add environment variables in the Vercel dashboard:
-- `DATABASE_URL` — your production Neon/Railway connection string
-
-### Database → Neon (Recommended)
-
-1. Create project at [neon.tech](https://neon.tech)
-2. Copy the connection string
-3. Run migration: `npx prisma migrate deploy`
 
 ---
 
