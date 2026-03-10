@@ -237,6 +237,4 @@ CREATE TABLE students (
 
 ---
 
-## License
 
-MIT
