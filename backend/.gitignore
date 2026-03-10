@@ -1,0 +1,26 @@
+# node_modules
+node_modules/
+.next/
+dist/
+build/
+
+# Environment variables — never commit
+.env
+
+# SSL certificates — never commit
+certs/
+.env.local
+.env.development.local
+.env.production.local
+
+# Prisma
+generated/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.DS_Store
+.vscode/
+*.swp
